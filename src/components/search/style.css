@@ -1,0 +1,9 @@
+.search-form {
+  border-bottom: 1px solid var(--grey-1);
+}
+
+.search-form > .flex > .icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
