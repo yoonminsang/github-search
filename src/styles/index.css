@@ -81,6 +81,7 @@ main.content {
   display: none;
 }
 
+.img,
 .icon {
   background-position: 50%;
   background-repeat: no-repeat;
@@ -90,7 +91,12 @@ main.content {
 .icon.search-black {
   background-image: url('../assets/icons/search-black.svg');
 }
-
 .icon.search-grey {
   background-image: url('../assets/icons/search-grey.svg');
+}
+.icon.favorite {
+  background-image: url('../assets/icons/favorite.svg');
+}
+.icon.favorite-border {
+  background-image: url('../assets/icons/favorite-border.svg');
 }
