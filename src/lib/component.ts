@@ -8,7 +8,7 @@ abstract class Component {
   target: HTMLElement;
   props: IProps;
   inside: boolean | undefined;
-  state: IObject;
+  state: any;
 
   constructor(target: HTMLElement, props = {}) {
     this.target = target;
