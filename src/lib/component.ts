@@ -51,11 +51,11 @@ abstract class Component {
     this.target = temp;
   }
 
-  public appendComponent(newDom: DocumentFragment | HTMLElement) {}
+  public appendComponent(_newDom: DocumentFragment | HTMLElement) {}
 
   public componentDidMount() {}
 
-  public componentDidUpdate(state: IObject, nextState: IObject) {}
+  public componentDidUpdate(_state: IObject, _nextState: IObject) {}
 
   public markup() {
     return '';
@@ -67,8 +67,9 @@ abstract class Component {
     const children = [...this.target.querySelectorAll(selector)] as HTMLElement[];
     const isTarget = (target: HTMLElement) => children.includes(target) || target.closest(selector);
     this.target.addEventListener(eventType, (event) => {
-      if (!isTarget(event.target as HTMLElement)) return false;
-      callback(event);
+      if (isTarget(event.target as HTMLElement)) {
+        callback(event);
+      }
     });
   }
 
