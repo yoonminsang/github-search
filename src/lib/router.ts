@@ -1,10 +1,6 @@
+import { IRoute } from '@/types';
 import routerContext, { RouterContext } from './router-context';
 import { getPathname, getQuery, pathValidation } from './utils';
-
-interface IRoute {
-  path: string;
-  component: any;
-}
 
 class Router {
   target: HTMLElement;
