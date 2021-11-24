@@ -7,7 +7,7 @@ interface IProps {
 abstract class Component {
   target: HTMLElement;
   props: IProps;
-  inside: boolean;
+  inside: boolean | undefined;
   state: IObject;
 
   constructor(target: HTMLElement, props = {}) {
@@ -17,7 +17,6 @@ abstract class Component {
     this.render();
     this.componentDidMount();
     this.setEvent();
-    this.inside = false;
     this.state = {};
   }
 
@@ -66,14 +65,14 @@ abstract class Component {
   public addEvent(eventType: string, selector: string, callback: Function) {
     const children = [...this.target.querySelectorAll(selector)] as HTMLElement[];
     const isTarget = (target: HTMLElement) => children.includes(target) || target.closest(selector);
-    this.target.addEventListener(eventType, (event) => {
-      if (isTarget(event.target as HTMLElement)) {
-        callback(event);
+    this.target.addEventListener(eventType, (e) => {
+      if (isTarget(e.target as HTMLElement)) {
+        callback(e);
       }
     });
   }
 
-  public setState(nextState: IObject, cb: Function) {
+  public setState(nextState: IObject, cb?: Function) {
     this.componentDidUpdate({ ...this.state }, { ...this.state, ...nextState });
     this.state = { ...this.state, ...nextState };
     this.update();
@@ -90,7 +89,6 @@ abstract class Component {
     this.appendComponent(newDom);
 
     if (!newDom.firstElementChild) return;
-
     const newElements = this.inside
       ? [...newDom.firstElementChild.querySelectorAll('*')]
       : [...newDom.querySelectorAll('*')];
