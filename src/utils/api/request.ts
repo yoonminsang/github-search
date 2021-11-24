@@ -4,7 +4,7 @@ type Method = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
 
 const client: AxiosInstance = axios.create();
 
-client.defaults.baseURL = 'https://api.github.com/';
+client.defaults.baseURL = process.env.NODE_ENV === 'development' ? '/api' : 'https://api.github.com/';
 client.defaults.withCredentials = true;
 
 const requestEvent = new CustomEvent('request');
@@ -19,6 +19,7 @@ async function request<T>(method: Method, url: string, body?: T, multipart?: boo
       url,
       headers: {
         ...multipartOption,
+        // 'Access-Control-Allow-Origin': '*',
       },
       ...(body && { data: body }),
     });

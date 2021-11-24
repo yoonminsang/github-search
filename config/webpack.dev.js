@@ -20,7 +20,9 @@ module.exports = merge(common, {
     historyApiFallback: true,
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'https://api.github.com/',
+        changeOrigin: true,
+        pathRewrite: { '/api': '/' },
       },
     },
   },
