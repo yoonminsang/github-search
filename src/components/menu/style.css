@@ -1,0 +1,12 @@
+.menu {
+  border-bottom: 1px solid var(--grey-1);
+}
+
+.menu a {
+  width: 50%;
+  text-align: center;
+}
+
+.menu a.selected {
+  border-bottom: 5px solid var(--primary-2);
+}
