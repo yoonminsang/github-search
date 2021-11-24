@@ -1,4 +1,4 @@
-.header {
+header.header {
   display: flex;
   align-items: center;
   color: var(--primary);
@@ -8,7 +8,7 @@
   justify-content: space-between;
 }
 
-.header > h1 {
+header.header > h1 {
   font-weight: 700;
   font-size: 30px;
 }

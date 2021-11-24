@@ -10,14 +10,14 @@ class Menu extends Component {
       { name: '로컬', pathname: '/local' },
     ];
     return /* html */ `
-      <div class="flex full-width menu">
-        ${menuList
-          .map(({ name, pathname }) => {
-            const selected = pathname === history.pathname;
-            return `<a href=${pathname} ${selected ? 'class="selected"' : ''}>${name}</a>`;
-          })
-          .join('')}
-      </div>
+    <div class="flex full-width menu">
+      ${menuList
+        .map(({ name, pathname }) => {
+          const selected = pathname === history.pathname;
+          return `<a href=${pathname} ${selected ? 'class="selected"' : ''}>${name}</a>`;
+        })
+        .join('')}
+    </div>
     `;
   }
 }
