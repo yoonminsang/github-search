@@ -1,4 +1,4 @@
-import { IRoute } from '@/types';
+import { IRoute } from '@/types/route';
 import routerContext, { RouterContext } from './router-context';
 import { getPathname, getQuery, pathValidation } from './utils';
 
