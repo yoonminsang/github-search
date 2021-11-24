@@ -3,7 +3,13 @@ import githubStore from '@/store/github-store';
 import Input from '../common/input';
 import './style.css';
 
+interface IState {
+  search: string;
+}
+
 class Search extends Component {
+  state!: IState;
+
   setup() {
     this.state = {
       search: '',
@@ -14,12 +20,12 @@ class Search extends Component {
     let iconClass = 'icon search';
     iconClass += `${this.state.search ? '-black' : '-grey'}`;
     return /* html */ `
-      <form class="search-form">
-        <div class="flex">
-          <inside class="input-inside"></inside>
-          <button class="${iconClass}" type="submit"></button>
-        </div>
-      </form>
+    <form class="search-form">
+      <div class="flex">
+        <inside class="input-inside"></inside>
+        <button class="${iconClass}" type="submit"></button>
+      </div>
+    </form>
     `;
   }
 
