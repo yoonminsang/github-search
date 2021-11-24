@@ -22,6 +22,15 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
+.wrapper > * {
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
 /* 
 .content-wrapper {
   display: flex;
@@ -54,6 +63,7 @@ main.content {
 
 .flex {
   display: flex;
+  align-items: center;
 }
 
 .right {
@@ -69,4 +79,18 @@ main.content {
 
 .blind {
   display: none;
+}
+
+.icon {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon.search-black {
+  background-image: url('../assets/icons/search-black.svg');
+}
+
+.icon.search-grey {
+  background-image: url('../assets/icons/search-grey.svg');
 }
