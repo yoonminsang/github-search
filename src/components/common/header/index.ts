@@ -1,4 +1,3 @@
-import axios from 'axios';
 import Component from '@/lib/component';
 import './style.css';
 
@@ -6,7 +5,9 @@ class Header extends Component {
   markup() {
     return /* html */ `
     <header class="header">
-      <h1>Github Stars</h1>
+      <h1>
+        <a href="/">Github Stars</a>
+      </h1>
     </header>
     `;
   }
