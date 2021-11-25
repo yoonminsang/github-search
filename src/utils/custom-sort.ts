@@ -12,11 +12,12 @@ const choosePriotry = (str: string) => {
 
 export const customSort = (a: string, b: string): any => {
   if (a[0] === b[0]) {
-    customSort(a.slice(1), b.slice(1));
+    return customSort(a.slice(1), b.slice(1));
   } else {
     const [aPriority, bPriority] = [choosePriotry(a[0]), choosePriotry(b[0])];
     if (aPriority === bPriority) {
-      return a.toLocaleLowerCase().charCodeAt(0) - b.toLocaleLowerCase().charCodeAt(0);
+      if (aPriority === 2) return a.toLowerCase().localeCompare(b.toLowerCase());
+      return a.charCodeAt(0) - b.charCodeAt(0);
     }
     return aPriority - bPriority;
   }
