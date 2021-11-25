@@ -2,6 +2,7 @@ import Router from './lib/router';
 import GithubSearchPage from './pages/github-search-page';
 import LocalSearchPage from './pages/local-search-page';
 import NotFoundPage from './pages/not-found-page';
+import localGithubStore from './store/local-github-store';
 import { IRoute } from './types/route';
 import { addLoader } from './utils/loader';
 
@@ -27,6 +28,7 @@ class App {
 
   init() {
     addLoader();
+    localGithubStore.getUserList();
   }
 }
 
