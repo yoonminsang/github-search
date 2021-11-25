@@ -1,5 +1,7 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
 
+// axios 함수를 모듈화 해서 만들었다. 함수 시작과 끝에 커스텀 이벤트를 발생시켜서 로딩을 적용시킨다.
+
 type Method = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
 
 const client: AxiosInstance = axios.create();
