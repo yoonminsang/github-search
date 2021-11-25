@@ -9,7 +9,6 @@ abstract class LocalStore extends Observable {
   }
 
   public setLocalStorage(key: string, value: any) {
-    console.log('setLocalStorage', key, value);
     const stringifyValue = JSON.stringify(value);
     localStorage.setItem(key, stringifyValue);
     const nextState = { [key]: value };
