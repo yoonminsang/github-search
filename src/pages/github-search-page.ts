@@ -16,7 +16,7 @@ class GithubSearchPage extends Component {
     const $header = target.querySelector('.header-inside') as HTMLElement;
     const $githubSearch = target.querySelector('.search-template-inside') as HTMLElement;
     new Header($header);
-    new SearchTemplate($githubSearch);
+    new SearchTemplate($githubSearch, { local: false });
   }
 }
 

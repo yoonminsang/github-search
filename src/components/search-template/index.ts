@@ -19,8 +19,8 @@ class SearchTemplate extends Component {
     const $search = target.querySelector('.search-inside') as HTMLElement;
     const $userList = target.querySelector('.user-list-inside') as HTMLElement;
     new Menu($menu);
-    new Search($search);
-    new UserList($userList);
+    new Search($search, { local: this.props?.local });
+    new UserList($userList, { local: this.props?.local });
   }
 }
 
