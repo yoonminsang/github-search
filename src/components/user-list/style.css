@@ -1,0 +1,26 @@
+.user-list > .user-header {
+  padding: 10px;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.user-list > .user {
+  padding: 10px;
+  border-bottom: 1px solid var(--grey-1);
+}
+
+.user-list > .user > .avatar-url {
+  width: 100px;
+  height: 100px;
+}
+
+.user-list > .user > .nickname {
+  margin-left: 10px;
+  font-size: 25px;
+}
+
+.user-list > .user > .icon {
+  width: 50px;
+  height: 50px;
+  margin-left: auto;
+}
