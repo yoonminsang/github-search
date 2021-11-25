@@ -45,7 +45,7 @@ class Search extends Component {
       e.preventDefault();
       const { search } = this.state;
       const encodeSearch = encodeURIComponent(search);
-      githubStore.getGithubUsers(encodeSearch);
+      githubStore.getUserList(encodeSearch);
     });
     this.addEvent('input', '.input-search', (e: Event) => {
       const target = e.target as HTMLInputElement;

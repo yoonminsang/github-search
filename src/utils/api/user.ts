@@ -1,5 +1,5 @@
 import { AxiosResponse } from 'axios';
-import { ISearchUsertParams, IUser } from '@/types/user';
+import { ISearchUsertParams } from '@/types/user';
 import request from './request';
 
 export const searchUserList = ({ search }: ISearchUsertParams): Promise<AxiosResponse> =>
