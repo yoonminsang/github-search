@@ -54,17 +54,23 @@ class UserList extends Component {
   }
 
   componentDidMount() {
-    githubStore.subscribe(() => this.setState({ userList: githubStore.state.userList }));
+    if (this.props.local) {
+      localGithubStore.subscribe(() => this.setState({ userList: localGithubStore.state.currentUserList }));
+    } else {
+      githubStore.subscribe(() => this.setState({ userList: githubStore.state.userList }));
+    }
   }
 
   setEvent() {
+    // TODO: 컴포넌트 this.state 바인딩 문제
+    const { userList: initialUserList } = this.state;
     this.addEvent('click', '.js-favorite', (e: Event) => {
       e.preventDefault();
       const target = e.target as HTMLButtonElement;
       const index = +(target.dataset.index as string);
       const favorite = target.dataset.favorite as string;
-      if (!this.state.userList) return;
-      const favoriteUser = this.state.userList[index];
+      const userList = !this.state ? (initialUserList as IUser[]) : (this.state.userList as IUser[]);
+      const favoriteUser = userList[index];
       if (favorite === 'true') {
         localGithubStore.removeFavoriteUserList(favoriteUser);
       } else {
