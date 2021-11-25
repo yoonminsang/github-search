@@ -17,6 +17,9 @@
 .user-list > .user > .nickname {
   margin-left: 10px;
   font-size: 25px;
+  width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .user-list > .user > .icon {
