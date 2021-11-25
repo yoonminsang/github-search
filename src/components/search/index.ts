@@ -1,5 +1,7 @@
 import Component from '@/lib/component';
 import githubStore from '@/store/github-store';
+import localGithubStore from '@/store/local-github-store';
+import { customSort } from '@/utils/custom-sort';
 import Input from '../common/input';
 import './style.css';
 
@@ -14,6 +16,9 @@ class Search extends Component {
     this.state = {
       search: '',
     };
+    const ex = ['adsr', 'as', 'Abhimanyu121', 'Aspine'];
+    ex.sort((a, b) => customSort(a, b));
+    console.log(ex);
   }
 
   markup() {
@@ -45,7 +50,11 @@ class Search extends Component {
       e.preventDefault();
       const { search } = this.state;
       const encodeSearch = encodeURIComponent(search);
-      githubStore.getUserList(encodeSearch);
+      if (this.props.local) {
+        localGithubStore.getUserList(search);
+      } else {
+        githubStore.getUserList(encodeSearch);
+      }
     });
     this.addEvent('input', '.input-search', (e: Event) => {
       const target = e.target as HTMLInputElement;
