@@ -28,7 +28,7 @@ class App {
 
   init() {
     addLoader();
-    localGithubStore.getUserList();
+    localGithubStore.getAllUserList();
   }
 }
 
