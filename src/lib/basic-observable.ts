@@ -1,6 +1,6 @@
 import { IObject } from '@/types';
 
-class Observable {
+abstract class Observable {
   observers: Function[];
   state: IObject;
 
@@ -9,9 +9,12 @@ class Observable {
     this.state = {};
   }
 
-  public setState(nextState: object) {
+  public setState(nextState: object, cb?: Function) {
     this.state = { ...this.state, ...nextState };
     this.notify();
+    if (cb) {
+      cb();
+    }
   }
 
   public subscribe(observer: Function) {
