@@ -17,7 +17,6 @@ abstract class Component {
     this.render();
     this.componentDidMount();
     this.setEvent();
-    this.state = {};
   }
 
   public setup() {}
