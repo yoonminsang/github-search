@@ -16,9 +16,6 @@ class Search extends Component {
     this.state = {
       search: '',
     };
-    const ex = ['adsr', 'as', 'Abhimanyu121', 'Aspine'];
-    ex.sort((a, b) => customSort(a, b));
-    console.log(ex);
   }
 
   markup() {

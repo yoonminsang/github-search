@@ -19,7 +19,6 @@ async function request<T>(method: Method, url: string, body?: T, multipart?: boo
       url,
       headers: {
         ...multipartOption,
-        // 'Access-Control-Allow-Origin': '*',
       },
       ...(body && { data: body }),
     });
